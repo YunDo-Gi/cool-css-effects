@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre&display=swap');
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gemunu Libre', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #05023d;
+}
+
+.box {
+    position:relative;
+    width:300px;
+    height:400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1em;
+    background-color: #440bd4;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    width:60%;
+    height:130%;
+    background: linear-gradient(#ff2079, #e92efb);
+    animation: roundAndRound 3s linear infinite;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    inset:0.3em;
+    background-color: #05023d;
+    border-radius: 0.8em;
+}
+
+@keyframes roundAndRound {
+    from {
+        transform: rotateZ(0);
+    } to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.box h2 {
+    position: relative;
+    z-index: 5;
+    font-size: 5em;
+    color: white;
+}
